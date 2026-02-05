@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Valentine</title>
+   <style>
+      body {
+         font-family: Arial, sans-serif;
+         text-align: center;
+         margin-top: 50px;
+         background-color: pink;
+      }
+      button {
+         font-size: 20px;
+         margin: 10px;
+         padding: 10px 20px;
+         cursor: pointer;
+      }
+      #yes-button {
+         background-color: green;
+         color: white;
+         border: none;
+         border-radius: 5px;
+      }
+      #no-button {
+         background-color: red;
+         color: white;
+         border: none;
+         border-radius: 5px;
+      }
+      #main-content {
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         align-items: center;
+      }
+      #button-container {
+         margin-top: 20px;
+      }
+   </style>
+</head>  
+<body>
+   <div id="main-content">
+      <h1>Would you be my Valentine?</h1>
+      <img src="Valentine_Heart_Pics-removebg-preview.png" alt="Valentine's Day Image" srcset="">
+      <div id="button-container">
+         <button id="yes-button">Yes!</button>
+         <button id="no-button">No.</button></div>
+      </div>
+   <script>
+      const yesButton = document.getElementById('yes-button');
+      const noButton = document.getElementById('no-button');
+
+      yesButton.addEventListener('click', () => {
+         // show gif of two cats hugging and kissing   
+         document.body.innerHTML = '<h1 style="color: red;">Yeees! Happy Valentine\'s Day!</h1><img src="cats_hugging.gif" alt="Cats Hugging">';
+      });
+
+      noButton.addEventListener('click', () => {
+         // button yes sum sum x2
+         yesButton.style.fontSize = parseInt(yesButton.style.fontSize || 20) + 20 + 'px';
+      });
+   </script>
+</body>
+</html>
