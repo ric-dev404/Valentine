@@ -38,6 +38,25 @@
       #button-container {
          margin-top: 20px;
       }
+      /* Stile per il bottone More Love senza sottolineatura */
+      #more-love-btn {
+         background-color: #ff69b4;
+         color: white;
+         border: none;
+         border-radius: 5px;
+         padding: 10px 20px;
+         font-size: 18px;
+         cursor: pointer;
+         text-decoration: none;
+         display: inline-block;
+      }
+      #more-love-btn a {
+         color: white;
+         text-decoration: none;
+      }
+      #more-love-btn:hover {
+         background-color: #ff1493;
+      }
       @media (max-width: 480px) {
          body {
             margin-top: 20px;
@@ -76,6 +95,13 @@
          #yes-button, #no-button {
             border-radius: 8px;
          }
+         #more-love-btn {
+            width: 100%;
+            max-width: 320px;
+            padding: 12px 16px;
+            font-size: 18px;
+            border-radius: 8px;
+         }
       }
    </style>
 </head>  
@@ -85,15 +111,24 @@
       <img src="Valentine_Heart_Pics-removebg-preview.png" alt="Valentine's Day Image" srcset="">
       <div id="button-container">
          <button id="yes-button">Yes!</button>
-         <button id="no-button">No.</button></div>
+         <button id="no-button">No.</button>
       </div>
+   </div>
    <script>
       const yesButton = document.getElementById('yes-button');
       const noButton = document.getElementById('no-button');
 
       yesButton.addEventListener('click', () => {
-         // show gif of two cats hugging and kissing   
-         document.body.innerHTML = '<h1 style="color: red;">Yeees! Happy Valentine\'s Day!❤️</h1><img src="cats_hugging.gif" alt="Cats Hugging"><button id="no-button"><a href="https://www.instagram.com/p/DUn0tYpEmNG/?igsh=MWkweTRnOXh1YmRiZA==">More Love</a></button>';
+         // Mostra immagine gatti e bottone More Love sotto, senza sottolineatura
+         document.body.innerHTML = `
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; padding: 20px; background-color: pink; font-family: Arial, sans-serif;">
+               <h1 style="color: red; margin-bottom: 20px;">Yeees! Happy Valentine's Day!❤️</h1>
+               <img src="cats_hugging.gif" alt="Cats Hugging" style="max-width: 90%; height: auto; margin-bottom: 20px;">
+               <button id="more-love-btn">
+                  <a href="https://www.instagram.com/p/DUn0tYpEmNG/?igsh=MWkweTRnOXh1YmRiZA==">More Love</a>
+               </button>
+            </div>
+         `;
       });
 
       noButton.addEventListener('click', () => {
@@ -102,7 +137,4 @@
       });
    </script>
 </body>
-
 </html>
-
-
